@@ -15,5 +15,10 @@ module "EC2" {
   source = "./modules/EC2"
 }
 
+module "CloudWatch" {
+  source = "./modules/CloudWatch"
+  EC2_id = module.EC2.instance_name
+}
+
 
 
